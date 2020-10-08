@@ -13,6 +13,8 @@
 		<br><br>
 		Years of Study: ${student.studyYears}
 		<br><br>
+		Course Code: ${student.courseCode}
+		<br><br>
 		Favorite Language: ${student.favLanguage}
 		<br><br>
 		Operating Systems:

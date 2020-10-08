@@ -8,6 +8,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import org.bhavin.springdemo.mvc.validation.CourseCode;
+
 public class Student {
 	
 	@NotNull(message="is required")
@@ -28,6 +30,10 @@ public class Student {
 	
 	@Pattern(regexp="^[a-zA-Z0-9]{6}", message="only 6 characters/digits")
 	private String postalCode;
+	
+	@NotNull(message="is required")
+	@CourseCode(value="ENG", message="must start with ENG")
+	private String courseCode;
 	
 	public Student() {
 		
@@ -88,9 +94,15 @@ public class Student {
 	public String getPostalCode() {
 		return postalCode;
 	}
-
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
+	}
+
+	public String getCourseCode() {
+		return courseCode;
+	}
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
 	}
 	
 	
