@@ -2,8 +2,16 @@ package org.bhavin.springdemo.mvc;
 
 import java.util.LinkedHashMap;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class Student {
 	
+	@NotNull(message="is required")
+	@Size(min=3, message="First Name should have atleast 3 characters")
 	private String firstName;
 	private String lastName;
 	private String country;
@@ -12,6 +20,14 @@ public class Student {
 	private LinkedHashMap<String, String> countryOptions;
 	
 	private String[] operatingSystems;
+	
+	@NotNull(message="is required")
+	@Min(value=1, message="must be greater than or equal to 1")
+	@Max(value=6, message="must be less than or equal to 6")
+	private Integer studyYears;
+	
+	@Pattern(regexp="^[a-zA-Z0-9]{6}", message="only 6 characters/digits")
+	private String postalCode;
 	
 	public Student() {
 		
@@ -60,6 +76,21 @@ public class Student {
 	}
 	public void setOperatingSystems(String[] operatingSystems) {
 		this.operatingSystems = operatingSystems;
+	}
+
+	public Integer getStudyYears() {
+		return studyYears;
+	}
+	public void setStudyYears(Integer studyYears) {
+		this.studyYears = studyYears;
+	}
+
+	public String getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
 	}
 	
 	

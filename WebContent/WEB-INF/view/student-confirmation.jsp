@@ -9,6 +9,10 @@
 		<br><br>
 		Country: ${student.country}
 		<br><br>
+		Postal Code: ${student.postalCode}
+		<br><br>
+		Years of Study: ${student.studyYears}
+		<br><br>
 		Favorite Language: ${student.favLanguage}
 		<br><br>
 		Operating Systems:
